@@ -24,6 +24,26 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage3"
     },
+    "image7": {
+        "data": "hwQLAAUAAABQVQAAdRcFAHUXBQB1FwUAUFUAAAAAAABQVQAAdRcFAHUXBQB1FwUAUFUAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "EC2"
+    },
+    "image8": {
+        "data": "hwQRAAUAAABQVQAAdRcFAHUXBQB1FwUAUFUAAAAAAABQVQAAdRcFAHUXBQB1FwUAUFUAAAAAAABQVQAAdRcFAHUXBQB1FwUAUFUAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage4"
+    },
+    "image9": {
+        "data": "hwQFAAUAAABQVQAAdRcFAHUXBQB1FwUAUFUAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "EC0"
+    },
+    "image6": {
+        "data": "hwQFAAUAAABQVQAAdRcFAHUXBQB1FwUAUFUAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "EC1"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
