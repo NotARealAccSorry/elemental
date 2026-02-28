@@ -1,14 +1,8 @@
 function CardDraw (color: number, x: number, y: number, text: string, myImage: Image) {
-    fancyText.draw(text, myImage, x, y, 45, 10, fancyText.tiny_4)
+    fancyText.draw(text, myImage, x, y, 45, color, fancyText.tiny_4)
 }
 function DeathAndLevel () {
-    let Rooms = 0
-    statusbar.max = blockSettings.readNumber("Level") * 250
-    statusbar.value += ElitesFought * (Rooms + Floor * 12) * 10
-    if (statusbar.value == statusbar.max) {
-        blockSettings.writeNumber("Level", blockSettings.readNumber("Level") + 1)
-        statusbar.value = 0
-    }
+	
 }
 function CardImage (text: string) {
     Text = img`
@@ -83,128 +77,107 @@ function CardImage (text: string) {
         .............................................
         .............................................
         `
+    Card = img`
+        cccccccccccccccccccccccccccccccccccccccccccccccccc
+        c888888888888888888888888888888888888888888888888c
+        c888888888888888888888888888888888888888888888888c
+        c888888888888888888888888888888888888888888888888c
+        c888cccccccccccccccccccccccccccccccccccccccccc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cdddd22222222222222222222222222222222ddddc888c
+        c888cdddd22222222222222222222222222222222ddddc888c
+        c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e............................e2ddddc888c
+        c888cdddd2e2222222222222222222222222222e2ddddc888c
+        c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cddddddddddddddddddddddddddddddddddddddddc888c
+        c888cccccccccccccccccccccccccccccccccccccccccc888c
+        c888888888888888888888888888888888888888888888888c
+        c888888888888888888888888888888888888888888888888c
+        c888888888888888888888888888888888888888888888888c
+        cccccccccccccccccccccccccccccccccccccccccccccccccc
+        `
     if (text == "Cut") {
-        Card = img`
-            cccccccccccccccccccccccccccccccccccccccccccccccccc
-            c888888888888888888888888888888888888888888888888c
-            c888888888888888888888888888888888888888888888888c
-            c888888888888888888888888888888888888888888888888c
-            c888cccccccccccccccccccccccccccccccccccccccccc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cdddd22222222222222222222222222222222ddddc888c
-            c888cdddd22222222222222222222222222222222ddddc888c
-            c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e............................e2ddddc888c
-            c888cdddd2e2222222222222222222222222222e2ddddc888c
-            c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cccccccccccccccccccccccccccccccccccccccccc888c
-            c888888888888888888888888888888888888888888888888c
-            c888888888888888888888888888888888888888888888888c
-            c888888888888888888888888888888888888888888888888c
-            cccccccccccccccccccccccccccccccccccccccccccccccccc
-            `
-        CardDraw(2, 7, 45, "6DMG", Text)
-        Text.drawTransparentImage(img`
-            . 4 . 4 . 
-            . 2 2 2 . 
-            2 3 2 3 2 
-            2 2 2 2 2 
-            2 1 1 1 2 
-            . 2 1 2 . 
-            `, 32, 45)
-        Text.drawTransparentImage(img`
-            . 4 . 4 . . . 4 . 4 . 
-            . 2 2 2 . . . 2 2 2 . 
-            2 3 2 3 2 . 2 3 2 3 2 
-            2 2 2 2 2 . 2 2 2 2 2 
-            2 1 1 1 2 . 2 1 1 1 2 
-            . 2 1 2 . . . 2 1 2 . 
-            `, 32, 45)
-        Card.drawTransparentImage(assets.image`EC1`, 25, 6)
+        OutputCardImg = assets.image`myImage6`
+        EnergyImgOutput = assets.image`EC1`
+        EnemiesImg = "6 DMG"
+        Card.drawTransparentImage(assets.image`EC1`, 23, 0)
     } else if (text == "abc") {
     	
     } else {
     	
     }
-    CardDraw(10, 7, 12, text, Text)
-    Card.drawTransparentImage(Text, 0, 0)
+    CardDraw(7, 7, 48, "6DMG", Card)
+    CardDraw(10, 5, 6, text, Card)
     return Card
 }
+let EnemiesImg = ""
+let EnergyImgOutput: Image = null
+let OutputCardImg: Image = null
 let Card: Image = null
 let Text: Image = null
-let statusbar: StatusBarSprite = null
-let ElitesFought = 0
-let Floor = 0
-Floor = 10
-ElitesFought = 2
-statusbar = statusbars.create(20, 4, StatusBarKind.Health)
-if (!(blockSettings.exists("Level"))) {
-    blockSettings.writeNumber("Level", 1)
-    blockSettings.writeNumber("Exp", 0)
-    statusbar.value = 0
-} else {
-    statusbar.value = blockSettings.readNumber("Exp")
-}
+let mySprite = sprites.create(CardImage("Cut"), SpriteKind.Player)
+let Floor = 10
+let ElitesFought = 2
