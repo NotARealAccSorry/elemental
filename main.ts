@@ -1,5 +1,14 @@
-function PlayCard () {
-	
+function CardDraw (color: number, x: number, y: number, text: string, myImage: Image) {
+    fancyText.draw(text, myImage, x, y, 45, 10, fancyText.tiny_4)
+}
+function DeathAndLevel () {
+    let Rooms = 0
+    statusbar.max = blockSettings.readNumber("Level") * 250
+    statusbar.value += ElitesFought * (Rooms + Floor * 12) * 10
+    if (statusbar.value == statusbar.max) {
+        blockSettings.writeNumber("Level", blockSettings.readNumber("Level") + 1)
+        statusbar.value = 0
+    }
 }
 function CardImage (text: string) {
     Text = img`
@@ -90,38 +99,38 @@ function CardImage (text: string) {
             c888cddddddddddddddddddddddddddddddddddddddddc888c
             c888cddddddddddddddddddddddddddddddddddddddddc888c
             c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
-            c888cddddddddddddddddddddddddddddddddddddddddc888c
+            c888cdddd22222222222222222222222222222222ddddc888c
+            c888cdddd22222222222222222222222222222222ddddc888c
+            c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e............................e2ddddc888c
+            c888cdddd2e2222222222222222222222222222e2ddddc888c
+            c888cdddd2eeeeeeeeeeeeeeeeeeeeeeeeeeeeee2ddddc888c
             c888cddddddddddddddddddddddddddddddddddddddddc888c
             c888cddddddddddddddddddddddddddddddddddddddddc888c
             c888cddddddddddddddddddddddddddddddddddddddddc888c
@@ -157,7 +166,7 @@ function CardImage (text: string) {
             c888888888888888888888888888888888888888888888888c
             cccccccccccccccccccccccccccccccccccccccccccccccccc
             `
-        fancyText.draw("6 DMG", Text, 7, 45, 47, 2, fancyText.tiny_4)
+        CardDraw(2, 7, 45, "6DMG", Text)
         Text.drawTransparentImage(img`
             . 4 . 4 . 
             . 2 2 2 . 
@@ -176,17 +185,26 @@ function CardImage (text: string) {
             `, 32, 45)
         Card.drawTransparentImage(assets.image`EC1`, 25, 6)
     } else if (text == "abc") {
-        fancyText.draw("This is an abc card this card has no use or function it was made because I forgot to change the text", Text, 3, 0, 0, 1, fancyText.smallArcade)
+    	
     } else {
     	
     }
-    fancyText.draw(text, Text, 7, 12, 45, 10, fancyText.tiny_4)
+    CardDraw(10, 7, 12, text, Text)
     Card.drawTransparentImage(Text, 0, 0)
     return Card
 }
 let Card: Image = null
 let Text: Image = null
-let Floor = 10
-let ElitesFought = 2
-let mySprite = CardImage("Cut")
-let mySprite2 = sprites.create(mySprite, SpriteKind.Player)
+let statusbar: StatusBarSprite = null
+let ElitesFought = 0
+let Floor = 0
+Floor = 10
+ElitesFought = 2
+statusbar = statusbars.create(20, 4, StatusBarKind.Health)
+if (!(blockSettings.exists("Level"))) {
+    blockSettings.writeNumber("Level", 1)
+    blockSettings.writeNumber("Exp", 0)
+    statusbar.value = 0
+} else {
+    statusbar.value = blockSettings.readNumber("Exp")
+}
