@@ -6,7 +6,8 @@
         "arcade-fancy-text": "github:riknoll/arcade-fancy-text#v0.2.1",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
         "BetterSettings": "github:sargedev/bettersettings#2023.5.1",
-        "arcade-improved-sprite-data": "github:riknoll/arcade-improved-sprite-data#2e82c060f5d29b7ae556e11a29aa2f25a26a6115"
+        "arcade-improved-sprite-data": "github:riknoll/arcade-improved-sprite-data#2e82c060f5d29b7ae556e11a29aa2f25a26a6115",
+        "arcade-block-objects": "github:microsoft/arcade-block-objects#f486ac1d4dcc096b9297174f97f8cdef1576c7ff"
     },
     "files": [
         "main.blocks",

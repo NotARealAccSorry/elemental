@@ -1,8 +1,5 @@
-function CardDraw (color: number, x: number, y: number, text: string, myImage: Image) {
+function CardText (color: number, x: number, y: number, text: string, myImage: Image) {
     fancyText.draw(text, myImage, x, y, 45, color, fancyText.tiny_4)
-}
-function DeathAndLevel () {
-	
 }
 function CardImage (text: string) {
     Text = img`
@@ -160,24 +157,54 @@ function CardImage (text: string) {
         cccccccccccccccccccccccccccccccccccccccccccccccccc
         `
     if (text == "Cut") {
-        OutputCardImg = assets.image`myImage6`
-        EnergyImgOutput = assets.image`EC1`
-        EnemiesImg = "6 DMG"
-        Card.drawTransparentImage(assets.image`EC1`, 23, 0)
+    	
     } else if (text == "abc") {
     	
     } else {
     	
     }
-    CardDraw(7, 7, 48, "6DMG", Card)
-    CardDraw(10, 5, 6, text, Card)
+    CardText(7, 7, 48, "6DMG", Card)
+    CardText(10, 5, 6, text, Card)
     return Card
 }
-let EnemiesImg = ""
-let EnergyImgOutput: Image = null
-let OutputCardImg: Image = null
 let Card: Image = null
 let Text: Image = null
 let mySprite = sprites.create(CardImage("Cut"), SpriteKind.Player)
-let Floor = 10
-let ElitesFought = 2
+let CardImgArray = [assets.image`myImage6`]
+let CardNamesArray = [
+"Cut",
+"Block",
+"Inferno",
+"Wildfire"
+]
+// Array #1 is for Defending
+// Array #2 is for the DMG the card does
+let AllCardDFNDDMGArray = [[
+0,
+5,
+3,
+0
+], [
+6,
+0,
+0,
+14
+]]
+// Value can be
+// 1. Empty
+// 2. Fire
+// 3. Water
+// 4. Electric
+// 5. Air
+// 6. Random (switches each turn to 2-5)
+let AllCardCreateConsumeElementArray = [[
+"None",
+"None",
+"Fire",
+"None"
+], [
+"None",
+"None",
+"None",
+"Fire"
+]]
